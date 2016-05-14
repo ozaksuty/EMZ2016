@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LTT.Views.MyTweets">
+  <StackLayout>
+    <StackLayout Padding="20,10" Spacing="0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" BackgroundColor="#455A64">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+          <Entry x:Name="txtHashtag" WidthRequest="120"></Entry>
+          <Button Text="Ara" Clicked="SearchHashtag"></Button>
+        </StackLayout>
+        <Label x:Name="lblHashtag" TextColor="#fff" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+      </StackLayout>
+    </StackLayout>
+    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+      <Label Text="Tweet Getir" TextColor="#fff" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"></Label>
+    </StackLayout>
+    <ListView x:Name="lvHashtag" HasUnevenRows="True" BackgroundColor="#455A64">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Padding="5">
+              <StackLayout HeightRequest="80" Spacing="5" Orientation="Horizontal">
+                <Image Source="{Binding ProfilePicture}" HorizontalOptions="Start" WidthRequest="70"></Image>
+                <StackLayout Spacing="2" WidthRequest="0" HorizontalOptions="FillAndExpand">
+                  <Label Text="{Binding Name}" FontAttributes="Bold"></Label>
+                  <Label Text="{Binding Time}" LineBreakMode="TailTruncation"></Label>
+                  <Label Text="{Binding Tweet}" LineBreakMode="TailTruncation"></Label>
+                </StackLayout>
+              </StackLayout>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+</ContentPage>
